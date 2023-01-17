@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
+import Profile from './components/Profile'
+
 
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className='mx-auto px-4'>
+      <div className='grid grid-cols-3'>
+      <Profile />
+      <div className='col-span-2'></div>
+      </div>
+    </div>
   )
 }

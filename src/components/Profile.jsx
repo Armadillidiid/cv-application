@@ -2,34 +2,6 @@ import React, { useState, useEffect } from "react";
 
 
 const Profile = (props) => {
-    const [userData, setUserData]  = useState({
-        firstName: '',
-        lastName: '',
-        title: '',
-        email: '',
-        phoneNumber: '',
-        website: '',
-        bio: ''
-    })
-    
-    const handleChange = (e) => {
-        const { value, name } = e.target
-        setUserData(prevUser => ({
-            ...prevUser,
-            [name]: value
-        }))
-    }
-    
-    console.log(userData)
-    useEffect(() => {
-        setUserData(prevState => {
-            return({
-                ...prevState,
-                firstName: 'James'
-            })
-        })
-    }, [])
-
     return (
         <div>
             <h2>Personal Data</h2>
@@ -40,8 +12,8 @@ const Profile = (props) => {
                         type="text" 
                         placeholder="Your first name"
                         name="firstName"
-                        onChange={handleChange}
-                        value={userData.firstName}
+                        onChange={props.handleChange}
+                        value={props.userData.firstName}
                     />
                 </div>
 
@@ -51,8 +23,8 @@ const Profile = (props) => {
                         type="text"
                         placeholder="Your last name"
                         name="lastName"
-                        onChange={handleChange}
-                        value={userData.lastName}
+                        onChange={props.handleChange}
+                        value={props.userData.lastName}
                     />
                 </div>
 
@@ -62,8 +34,8 @@ const Profile = (props) => {
                         type="text"
                         placeholder="Current job title"
                         name="title"
-                        onChange={handleChange}
-                        value={userData.title}
+                        onChange={props.handleChange}
+                        value={props.userData.title}
                     />
                 </div>
 
@@ -73,8 +45,8 @@ const Profile = (props) => {
                         type="text"
                         placeholder="Your email"
                         name="email"
-                        onChange={handleChange}
-                        value={userData.email}
+                        onChange={props.handleChange}
+                        value={props.userData.email}
                     />
                 </div>
 
@@ -84,8 +56,8 @@ const Profile = (props) => {
                         type="text"
                         placeholder="Your phone number"
                         name="phoneNumber"
-                        onChange={handleChange}
-                        value={userData.phoneNumber}
+                        onChange={props.handleChange}
+                        value={props.userData.phoneNumber}
                     />
                 </div>
 
@@ -95,8 +67,8 @@ const Profile = (props) => {
                         type="text"
                         placeholder="Your website"
                         name="website"
-                        onChange={handleChange}
-                        value={userData.website}
+                        onChange={props.handleChange}
+                        value={props.userData.website}
                     />
                 </div>
 
@@ -106,8 +78,8 @@ const Profile = (props) => {
                         rows={6}
                         placeholder="Your bio"
                         name="bio"
-                        onChange={handleChange}
-                        value={userData.bio}
+                        onChange={props.handleChange}
+                        value={props.userData.bio}
                     />
                 </div>
             </form>

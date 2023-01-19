@@ -1,15 +1,42 @@
-import { FaPencilAlt } from "react-icons/fa";
+import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
+import uniqid from "uniqid";
 
 const Education = (props) => {
   const handleClick = () => {
-    console.log("Hello");
-  };
+    props.setUserData((prevUser) => ({
+      ...prevUser,
+      education: [
+        ...prevUser.education,
+        {
+          id: uniqid(),
+          school: "",
+          degree: "",
+          city: "",
+          state: "",
+          timeframe: "",
+        },
+      ],
+    }));
+  };  
+
+  const handleDeleteClick = (id) => {
+    props.setUserData(prevUser => {
+      const prevUserCopy = {...prevUser}
+      prevUserCopy.education = prevUserCopy.education.filter(education => education.id !== id)
+      return(prevUserCopy)
+    })
+  }
 
   const listItems = props.userData.education.map((user, index) => {
-    console.log(props.userData.education[index])
+    console.log(props.userData.education[index]);
     return (
       <div key={index}>
-        <h2>University/School #{index}</h2>
+        <div className="flex justify-between">
+          <h2>University/School #{index}</h2>
+          <button className="btn btn-error" onClick={() => handleDeleteClick(props.userData.education[index].id)}>
+            <FaTrashAlt />
+          </button>
+        </div>
         <input
           type="text"
           index={index}
@@ -57,7 +84,6 @@ const Education = (props) => {
       </div>
     );
   });
-
 
   return (
     <>

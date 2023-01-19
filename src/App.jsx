@@ -40,9 +40,11 @@ const handleChange = (e) => {
 const handleEducationChange = (e) => {
   const { value, name } = e.target
   const index = e.target.getAttribute('index')
-  const prevUserData = {...userData}
-  prevUserData['education'][index][name] = value
-  setUserData(prevUserData) 
+  setUserData((prevUserData) => {
+    const userDataCopy = {...prevUserData}
+    userDataCopy['education'][index][name] = value
+    return(userDataCopy)
+  })
 }
 
   return (
@@ -50,7 +52,7 @@ const handleEducationChange = (e) => {
       <div className='grid grid-cols-3'>
         <div>
         <Profile userData={userData} handleChange={handleChange} />
-        <Education userData={userData} handleChange={handleEducationChange} />
+        <Education userData={userData} setUserData={setUserData} handleChange={handleEducationChange} />
         </div>
         <div className='col-span-2'></div>
       </div>

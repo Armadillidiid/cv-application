@@ -39,6 +39,7 @@ const Experience = (props) => {
             <FaTrashAlt />
           </button>
         </div>
+
         <input
           type="text"
           placeholder="Your company"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Education from './components/Education'
 import Profile from './components/Profile'
+import Experience from './components/Experience'
 import uniqid from 'uniqid'
 
 export default function App() {
@@ -23,7 +24,17 @@ export default function App() {
 
       }
     ],
-    experience: [],
+    experience: [
+      {
+        id: uniqid(),
+        company: "",
+        position: "",
+        city: "",
+        state: "",
+        timeframe: "",
+        description: ""
+      }
+    ],
     projects: [],
     skills: []
 })
@@ -37,19 +48,19 @@ const handleChange = (e) => {
     }))
 }
 
-const handleEducationChange = (e, index) => {
+const onHandleObjectChange = (e, index, component) => {
   const { value, name } = e.target
   setUserData((prevUserData) => {
     const userDataCopy = {...prevUserData}
-    userDataCopy['education'][index][name] = value
+    userDataCopy[component][index][name] = value
     return(userDataCopy)
   })
 }
 
-const onHandleDeleteClick = (id, object) => {
+const onHandleDeleteClick = (id, component) => {
   setUserData(prevUser => {
     const prevUserCopy = {...prevUser}
-    prevUserCopy[object] = prevUserCopy[object].filter(education => education.id !== id)
+    prevUserCopy[component] = prevUserCopy[component].filter(element => element.id !== id)
     return(prevUserCopy)
   })
 }
@@ -58,7 +69,8 @@ const onHandleDeleteClick = (id, object) => {
       <div className='grid grid-cols-3'>
         <div>
         <Profile userData={userData} handleChange={handleChange} />
-        <Education userData={userData} setUserData={setUserData} handleChange={handleEducationChange} handleDeleteClick={onHandleDeleteClick} />
+        <Education userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
+        <Experience userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         </div>
         <div className='col-span-2'></div>
       </div>

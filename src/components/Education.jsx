@@ -19,13 +19,6 @@ const Education = (props) => {
     }));
   };  
 
-  const handleDeleteClick = (id) => {
-    props.setUserData(prevUser => {
-      const prevUserCopy = {...prevUser}
-      prevUserCopy.education = prevUserCopy.education.filter(education => education.id !== id)
-      return(prevUserCopy)
-    })
-  }
 
   const listItems = props.userData.education.map((user, index) => {
     console.log(props.userData.education[index]);
@@ -33,7 +26,7 @@ const Education = (props) => {
       <div key={index}>
         <div className="flex justify-between">
           <h2>University/School #{index}</h2>
-          <button className="btn btn-error" onClick={() => handleDeleteClick(props.userData.education[index].id)}>
+          <button className="btn btn-error" onClick={() => props.handleDeleteClick(props.userData.education[index].id, 'education')}>
             <FaTrashAlt />
           </button>
         </div>

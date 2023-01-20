@@ -46,12 +46,19 @@ const handleEducationChange = (e, index) => {
   })
 }
 
+const onHandleDeleteClick = (id, object) => {
+  setUserData(prevUser => {
+    const prevUserCopy = {...prevUser}
+    prevUserCopy[object] = prevUserCopy[object].filter(education => education.id !== id)
+    return(prevUserCopy)
+  })
+}
   return (
     <div className='mx-auto px-4'>
       <div className='grid grid-cols-3'>
         <div>
         <Profile userData={userData} handleChange={handleChange} />
-        <Education userData={userData} setUserData={setUserData} handleChange={handleEducationChange} />
+        <Education userData={userData} setUserData={setUserData} handleChange={handleEducationChange} handleDeleteClick={onHandleDeleteClick} />
         </div>
         <div className='col-span-2'></div>
       </div>

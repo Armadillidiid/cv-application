@@ -34,7 +34,7 @@ const Education = (props) => {
           type="text"
           placeholder="Your school"
           name="school"
-          onChange={(e) => props.handleChange(e, index)}
+          onChange={(e) => props.handleChange(e, index, 'education')}
           value={props.userData.education[index].school}
         />
 
@@ -42,7 +42,7 @@ const Education = (props) => {
           type="text"
           placeholder="Your degree"
           name="degree"
-          onChange={(e) => props.handleChange(e, index)}
+          onChange={(e) => props.handleChange(e, index, 'education')}
           value={user.degree}
         />
 
@@ -50,7 +50,7 @@ const Education = (props) => {
           type="text"
           placeholder="Your city"
           name="city"
-          onChange={(e) => props.handleChange(e, index)}
+          onChange={(e) => props.handleChange(e, index, 'education')}
           value={user.city}
         />
 
@@ -58,7 +58,7 @@ const Education = (props) => {
           type="text"
           placeholder="Your state"
           name="state"
-          onChange={(e) => props.handleChange(e, index)}
+          onChange={(e) => props.handleChange(e, index, 'education')}
           value={user.state}
         />
 
@@ -66,7 +66,7 @@ const Education = (props) => {
           type="text"
           placeholder="Your timeframe"
           name="timeframe"
-          onChange={(e) => props.handleChange(e, index)}
+          onChange={(e) => props.handleChange(e, index, 'education')}
           value={user.timeframe}
         />
       </div>

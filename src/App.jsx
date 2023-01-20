@@ -37,9 +37,8 @@ const handleChange = (e) => {
     }))
 }
 
-const handleEducationChange = (e) => {
+const handleEducationChange = (e, index) => {
   const { value, name } = e.target
-  const index = e.target.getAttribute('index')
   setUserData((prevUserData) => {
     const userDataCopy = {...prevUserData}
     userDataCopy['education'][index][name] = value

@@ -39,46 +39,41 @@ const Education = (props) => {
         </div>
         <input
           type="text"
-          index={index}
           placeholder="Your school"
           name="school"
-          onChange={props.handleChange}
+          onChange={(e) => props.handleChange(e, index)}
           value={props.userData.education[index].school}
         />
 
         <input
           type="text"
-          index={index}
           placeholder="Your degree"
           name="degree"
-          onChange={props.handleChange}
+          onChange={(e) => props.handleChange(e, index)}
           value={user.degree}
         />
 
         <input
           type="text"
-          index={index}
           placeholder="Your city"
           name="city"
-          onChange={props.handleChange}
+          onChange={(e) => props.handleChange(e, index)}
           value={user.city}
         />
 
         <input
           type="text"
-          index={index}
           placeholder="Your state"
           name="state"
-          onChange={props.handleChange}
+          onChange={(e) => props.handleChange(e, index)}
           value={user.state}
         />
 
         <input
           type="text"
-          index={index}
           placeholder="Your timeframe"
           name="timeframe"
-          onChange={props.handleChange}
+          onChange={(e) => props.handleChange(e, index)}
           value={user.timeframe}
         />
       </div>

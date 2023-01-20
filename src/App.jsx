@@ -4,6 +4,7 @@ import Education from './components/Education'
 import Profile from './components/Profile'
 import Experience from './components/Experience'
 import Project from './components/Project'
+import Skill from './components/Skill'
 
 
 export default function App() {
@@ -44,7 +45,12 @@ export default function App() {
         description: ''
       }
     ],
-    skill: []
+    skill: [
+      {
+        id: uniqid(),
+        name: ''
+      },
+    ]
 })
 
 const handleChange = (e) => {
@@ -80,6 +86,7 @@ const onHandleDeleteClick = (id, component) => {
         <Education userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         <Experience userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         <Project userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
+        <Skill userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         </div>
         <div className='col-span-2'></div>
       </div>

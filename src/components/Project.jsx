@@ -44,8 +44,8 @@ const Project = (props) => {
           value={user.name}
         />
 
-        <input
-          type="text"
+        <textarea
+          rows="3"
           placeholder="Your description"
           name="description"
           onChange={(e) => props.handleChange(e, index, component)}

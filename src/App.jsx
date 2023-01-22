@@ -6,6 +6,7 @@ import Experience from './components/Experience'
 import Project from './components/Project'
 import Skill from './components/Skill'
 import Navbar from './components/Navbar'
+import Preview from './components/Preview'
 
 
 export default function App() {
@@ -83,7 +84,7 @@ const onHandleDeleteClick = (id, component) => {
     <>
     <Navbar />
     <div className='container bg-dark mx-auto px-4'>
-      <div className='grid grid-cols-5'>
+      <div className='grid grid-cols-5 gap-20'>
         <div className='col-span-2'>
         <Profile userData={userData} handleChange={handleChange} />
         <Education userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
@@ -91,7 +92,9 @@ const onHandleDeleteClick = (id, component) => {
         <Project userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         <Skill userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         </div>
-        <div className='col-span-3'></div>
+        <div className='col-span-3 flex relative justify-center'>
+          <Preview />
+        </div>
       </div>
     </div>
     </>

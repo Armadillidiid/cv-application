@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+input[type=text] {
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+textarea {
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+label {
+  color: white;
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+}
+
+h2 {
+  margin-bottom: 1rem; 
+  color: #000000; 
+  font-size: 1.25rem;
+  line-height: 1.75rem; 
+  font-weight: 600; 
+
+}

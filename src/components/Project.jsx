@@ -1,4 +1,4 @@
-import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
+import { FaPlus, FaTrashAlt } from "react-icons/fa";
 import uniqid from "uniqid";
 
 const Project = (props) => {
@@ -20,11 +20,11 @@ const Project = (props) => {
   const listItems = props.userData.project.map((user, index) => {
     console.log(props.userData[component][index]);
     return (
-      <div key={index}>
+      <div key={index} className="mb-4">
         <div className="flex justify-between">
-          <h2>Project #{index}</h2>
-          <button
-            className="btn btn-error"
+          <h2 className="text-white">Project #{index}</h2>
+          {props.userData.project.length > 1 ? <button
+            className="btn btn-sm btn-outline hover:btn-error transition duration-300"
             onClick={() =>
               props.handleDeleteClick(
                 props.userData.project[index].id,
@@ -33,7 +33,7 @@ const Project = (props) => {
             }
           >
             <FaTrashAlt />
-          </button>
+          </button> : ""}
         </div>
 
         <input
@@ -42,6 +42,7 @@ const Project = (props) => {
           name="name"
           onChange={(e) => props.handleChange(e, index, component)}
           value={user.name}
+          className="rounded-md bg-slate-700 hover:bg-slate-600 transition duration-300 w-full mb-2 text-white"
         />
 
         <textarea
@@ -50,20 +51,24 @@ const Project = (props) => {
           name="description"
           onChange={(e) => props.handleChange(e, index, component)}
           value={user.description}
+          className="rounded-md bg-slate-700 hover:bg-slate-600 transition duration-300 w-full mb-2 text-white"
         />
       </div>
     );
   });
 
   return (
-    <>
-      <h2>Projects Completed</h2>
+    <div className="bg-slate-800 p-6 my-6 rounded-lg">
+      <h2 className="text-white">Projects Completed</h2>
       {listItems}
-      <button className="btn btn-info" onClick={handleClick}>
-        <FaPencilAlt className="pr-1" />
-        New
+      <button
+        className="btn bg-sky-400 hover:bg-sky-600 transition duration-500 text-black"
+        onClick={handleClick}
+      >
+        <FaPlus className="pr-1" />
+        <span className="pl-2">New</span>
       </button>
-    </>
+    </div>
   );
 };
 

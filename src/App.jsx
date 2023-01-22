@@ -79,16 +79,16 @@ const onHandleDeleteClick = (id, component) => {
   })
 }
   return (
-    <div className='mx-auto px-4'>
-      <div className='grid grid-cols-3'>
-        <div>
+    <div className='container bg-dark mx-auto px-4'>
+      <div className='grid grid-cols-5'>
+        <div className='col-span-2'>
         <Profile userData={userData} handleChange={handleChange} />
         <Education userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         <Experience userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         <Project userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         <Skill userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         </div>
-        <div className='col-span-2'></div>
+        <div className='col-span-3'></div>
       </div>
     </div>
   )

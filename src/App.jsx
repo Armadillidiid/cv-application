@@ -5,6 +5,7 @@ import Profile from './components/Profile'
 import Experience from './components/Experience'
 import Project from './components/Project'
 import Skill from './components/Skill'
+import Navbar from './components/Navbar'
 
 
 export default function App() {
@@ -79,6 +80,8 @@ const onHandleDeleteClick = (id, component) => {
   })
 }
   return (
+    <>
+    <Navbar />
     <div className='container bg-dark mx-auto px-4'>
       <div className='grid grid-cols-5'>
         <div className='col-span-2'>
@@ -91,5 +94,6 @@ const onHandleDeleteClick = (id, component) => {
         <div className='col-span-3'></div>
       </div>
     </div>
+    </>
   )
 }

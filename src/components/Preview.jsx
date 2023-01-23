@@ -50,7 +50,7 @@ const Preview = ({ userData }) => {
   });
 
   return (
-    <div className="bg-white p-10 my-6 sticky top-6 overflow-y-scroll w-[618px] max-h-[95vh] width-20 rounded-lg">
+    <div className="bg-white p-10 my-6 sticky top-6 overflow-y-scroll w-[618px] max-h-[95vh] width-20 rounded-lg lg:scale-75 xl:scale-90 2xl:scale-100">
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold mb-0">
           {userData.firstName} {userData.lastName}

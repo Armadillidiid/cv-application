@@ -21,7 +21,6 @@ const Education = (props) => {
   };
 
   const listItems = props.userData.education.map((user, index) => {
-    console.log(props.userData.education[index]);
     return (
       <div key={index} className="mb-4">
         <div className="flex justify-between align-middle">

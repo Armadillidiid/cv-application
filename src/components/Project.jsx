@@ -18,7 +18,6 @@ const Project = (props) => {
   };
 
   const listItems = props.userData.project.map((user, index) => {
-    console.log(props.userData[component][index]);
     return (
       <div key={index} className="mb-4">
         <div className="flex justify-between">

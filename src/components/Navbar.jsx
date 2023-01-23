@@ -1,6 +1,7 @@
-import { FaRegSave, FaPencilAlt, FaGithub } from "react-icons/fa"
+import { FaRegSave, FaPencilAlt, FaGithub } from "react-icons/fa";
+import useAutofill from "../hooks/useAutofill";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className="navbar bg-slate-800">
       <div className="navbar-start">
@@ -61,32 +62,36 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">
           <li>
             {/* <a>Autofill</a> */}
-            <button className="btn btn-ghost">
-                <FaPencilAlt />
-                Autofill
+            <button
+              className="btn btn-ghost"
+              onClick={() => useAutofill(props.setUserData)}
+            >
+              <FaPencilAlt />
+              Autofill
             </button>
           </li>
           <li>
             {/* <a><FaRegSave /><span>Save</span></a> */}
             <button className="btn btn-ghost">
-                <FaRegSave />
-                Save
+              <FaRegSave />
+              Save
             </button>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn capitalize"
-            href="https://github.com/Armadillidiid"
-            target="_blank"
-            rel="noopener noreferrer"
+        <a
+          className="btn capitalize"
+          href="https://github.com/Armadillidiid"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            <FaGithub className="text-white mr-2" />
-            armadillidiid
+          <FaGithub className="text-white mr-2" />
+          armadillidiid
         </a>
       </div>
     </div>
   );
 };
 
-export default Navbar
+export default Navbar;

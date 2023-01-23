@@ -82,7 +82,7 @@ const onHandleDeleteClick = (id, component) => {
 }
   return (
     <>
-    <Navbar />
+    <Navbar setUserData={setUserData} />
     <div className='container bg-dark mx-auto px-4'>
       <div className='grid grid-cols-5 gap-20'>
         <div className='col-span-2'>
@@ -93,7 +93,7 @@ const onHandleDeleteClick = (id, component) => {
         <Skill userData={userData} setUserData={setUserData} handleChange={onHandleObjectChange} handleDeleteClick={onHandleDeleteClick} />
         </div>
         <div className='col-span-3 flex relative justify-center'>
-          <Preview />
+          <Preview userData={userData} />
         </div>
       </div>
     </div>

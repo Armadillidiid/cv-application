@@ -63,11 +63,8 @@ export default function App() {
   })
   }, [window.innerWidth]);
 
-  console.log(isPreview, width)
-
   const handleChange = (e) => {
     const { value, name } = e.target;
-    console.log(value, name);
     setUserData((prevUser) => ({
       ...prevUser,
       [name]: value,

@@ -1,5 +1,6 @@
 import { FaRegSave, FaPencilAlt, FaGithub } from "react-icons/fa";
 import useAutofill from "../hooks/useAutofill";
+import saveCv from "../utils/saveCv";
 
 const Navbar = (props) => {
   return (
@@ -36,7 +37,7 @@ const Navbar = (props) => {
             </button>
           </li>
           <li>
-            <button className="">
+            <button className="" onClick={saveCv}>
               <FaRegSave />
               Save
             </button>
@@ -46,7 +47,7 @@ const Navbar = (props) => {
         <a className="btn btn-ghost no-animation hover:bg-transparent cursor-default normal-case text-xl">CV Maker</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 gap-2">
           <li>
             {/* <a>Autofill</a> */}
             <button
@@ -59,7 +60,7 @@ const Navbar = (props) => {
           </li>
           <li>
             {/* <a><FaRegSave /><span>Save</span></a> */}
-            <button className="btn btn-ghost">
+            <button className="btn btn-ghost" onClick={saveCv}>
               <FaRegSave />
               Save
             </button>

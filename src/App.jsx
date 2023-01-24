@@ -91,7 +91,7 @@ export default function App() {
   };
   return (
     <>
-      <Navbar setUserData={setUserData} />
+      <Navbar setUserData={setUserData} setIsPreview={setIsPreview} isPreview={isPreview} />
       <div className="container bg-dark mx-auto px-4">
         <div className="grid grid-cols-5 gap-20">
           {(!isPreview || width  > 1024) && (

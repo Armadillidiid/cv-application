@@ -1,8 +1,16 @@
 import { FaRegSave, FaPencilAlt, FaGithub } from "react-icons/fa";
+import { useEffect } from "react";
+import { flushSync } from "react-dom";
 import useAutofill from "../hooks/useAutofill";
 import saveCv from "../utils/saveCv";
 
 const Navbar = (props) => {
+  const togglePreviewAndSave = () => {
+    flushSync(() => {
+      props.setIsPreview(true);
+    });
+    saveCv();
+  };
   return (
     <div className="navbar bg-slate-800">
       <div className="navbar-start">
@@ -28,23 +36,25 @@ const Navbar = (props) => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-            <button
-              className=""
-              onClick={() => useAutofill(props.setUserData)}
-            >
-              <FaPencilAlt />
-              Autofill
-            </button>
-          </li>
-          <li>
-            <button className="" onClick={saveCv}>
-              <FaRegSave />
-              Save
-            </button>
-          </li>
+              <button
+                className=""
+                onClick={() => useAutofill(props.setUserData)}
+              >
+                <FaPencilAlt />
+                Autofill
+              </button>
+            </li>
+            <li>
+              <button className="" onClick={() => togglePreviewAndSave()}>
+                <FaRegSave />
+                Save
+              </button>
+            </li>
           </ul>
         </div>
-        <a className="btn btn-ghost no-animation hover:bg-transparent cursor-default normal-case text-xl">CV Maker</a>
+        <a className="btn btn-ghost no-animation hover:bg-transparent cursor-default normal-case text-xl">
+          CV Maker
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">
